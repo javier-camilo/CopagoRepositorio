@@ -1,0 +1,31 @@
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2>Registro de Copagos</h2>
+            <form #formulario="ngForm">
+                <br>
+                                
+                <div class="form-group">
+                    <label>Identificacion</label>
+                    <input type="text" placeholder="Digite la identificacion paciente" name="identificacion"  [(ngModel)]="copago.identificacionPaciente" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label>Servicio hospitalizacion</label>
+                    <input type="number" placeholder="Digite el valor servicio"  name="servicio"  [(ngModel)]="copago.valorServicio" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label>salario del paciente</label>
+                    <input type="number" placeholder="Digite el salario"  name="salario"  [(ngModel)]="copago.salarioTrabajador" class="form-control" />
+                </div>
+
+                <div class="text-center">
+                    <button class="btn btn-primary mr-1"(click)="add(formulario)">registrar Datos</button>
+                </div>
+            
+            </form>
+        </div>
+    </div>
+</div>
