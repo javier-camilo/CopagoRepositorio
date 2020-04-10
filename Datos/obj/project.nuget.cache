@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "embta4w429hAvXmOAoM8kEXosHfw/45+5TLBzgjSQ5CfOC+OYBs0pqC43/Mg5ZAjE1RIVqM+bKU/SoG8mFrFpg==",
+  "dgSpecHash": "qWWO9QZiLaPhjhe6fMrA7eTIKa1BaqHhtrocYj+d7axHthMX32Xw1/xnDu7bkV5tzOtzgzmSQRryegwFs8375g==",
   "success": true,
-  "projectFilePath": "c:\\Users\\ASUS-PC\\Desktop\\Plantillas oficiales\\CopagoRepositorio-master\\Datos\\Datos.csproj",
+  "projectFilePath": "C:\\Users\\ASUS-PC\\Desktop\\Plantillas oficiales\\CopagoRepositorio-master\\Datos\\Datos.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
