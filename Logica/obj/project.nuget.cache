@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+Ksap66tcbmneZqsi7nVnVEmbmFvx0s16oSfLImxyUKWIcGeUbNJ3Ox7Vw4ufDApLjN0fA/l3J5EOuGnEvSl6g==",
+  "dgSpecHash": "7lGmg6pv+UGuWJasvHbFGbtITSem50o9Ynh8PRhUCkSvff6cEA/ksoA9S7UH2i3HgcINzwBbZfpIV4i1bfADhQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ASUS-PC\\Desktop\\Plantillas oficiales\\CopagoRepositorio-master\\Logica\\Logica.csproj",
+  "projectFilePath": "c:\\Users\\ASUS-PC\\Desktop\\Plantillas oficiales\\CopagoRepositorio-master\\Logica\\Logica.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
