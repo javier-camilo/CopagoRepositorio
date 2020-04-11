@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ao8DIa+7hrvz33xR/FTIsj0orFenl8GJdHSqInto9JuDqYr6VTIiR4vYwdz8miNn6mayOuTaBIMY5L537XYBlw==",
+  "dgSpecHash": "CJ3aVun55jlEMAf9BtmMT12Pc9eIRmbuCgGpaaQDYE+G7BcU+YgtmXRHXRb+eZ2ebn5ClVJCET8rdfpU4LOKog==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ASUS-PC\\Desktop\\Plantillas oficiales\\CopagoRepositorio-master\\Entity\\Entity.csproj",
+  "projectFilePath": "c:\\Users\\ASUS-PC\\Desktop\\Plantillas oficiales\\CopagoRepositorio-master\\Entity\\Entity.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
