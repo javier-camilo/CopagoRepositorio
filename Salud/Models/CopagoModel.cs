@@ -6,8 +6,8 @@ namespace Salud.Models
     public class CopagoInputModel
     {
            public string IdentificacionPaciente { get; set; }
-           public decimal ValorServicio { get; set; }  
-           public decimal SalarioTrabajador { get; set; }
+           public double ValorServicio { get; set; }  
+           public double SalarioTrabajador { get; set; }
            
     }
 
@@ -26,7 +26,7 @@ namespace Salud.Models
             CopagoValor=copago.CopagoValor;
             Porcentaje=copago.Porcentaje;
         }
-        public decimal CopagoValor { get; set; }
+        public double CopagoValor { get; set; }
         public string Porcentaje { get; set; }
     }
     

@@ -1,7 +1,7 @@
 <div class="row">
 
     <div class="col-6" style="margin-top: 20px;">
-      <input [(ngModel)]="searchText" type="text" class="form-control" placeholder="Type to filter">
+      <input [(ngModel)]="searchText" type="text" class="form-control" placeholder="Texto para filtro">
     </div>
   </div>
   
@@ -24,7 +24,7 @@
         <td>{{ copago.identificacionPaciente }} </td>
         <td>{{ copago.valorServicio }}</td>
         <td>{{copago.salarioTrabajador  }}</td>
-        <td>{{ copago.copagoValor }}</td>
+        <td>{{ copago.copagoValor | currency: 'COP' }}</td>
         <td>{{ copago.porcentaje  }}</td>
       </tr>
     </tbody>

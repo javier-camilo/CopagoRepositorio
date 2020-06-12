@@ -19,6 +19,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import { CopagoService } from './services/copago.service';
 
 
 @NgModule({
@@ -50,7 +51,7 @@ import {MatListModule} from '@angular/material/list';
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [CopagoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,20 +1,22 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 
 namespace Entity
 {
     public class Copago
     {
+        [Key]
         public string IdentificacionPaciente { get; set; }
-        public decimal ValorServicio { get; set; }  
-        public decimal SalarioTrabajador { get; set; }
+        public double ValorServicio { get; set; }  
+        public double SalarioTrabajador { get; set; }
         public string Porcentaje {get;set;}
         
-        public decimal CopagoValor { 
+        public double CopagoValor { 
             
             get
             {
-                decimal valor,porcentaje=0.2m;
+                double valor,porcentaje=0.2;
 
                 if (SalarioTrabajador>2500000)
                 {

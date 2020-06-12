@@ -2,35 +2,39 @@ using Datos;
 using Entity;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Logica
 {
     public class CopagoService
     {
-        
-        private readonly ConnectionManager _conexion;
-        private readonly CopagoRepository _repositorio;
-
-        public CopagoService(string connectionString)
+        private readonly CopagoContext _context;
+        public CopagoService(CopagoContext context)
         {
-            _conexion = new ConnectionManager(connectionString);
-            _repositorio = new CopagoRepository(_conexion);
+            _context=context;
+
         }
 
         public GuardarCopagoResponse Guardar(Copago copago)
         {
             try
             {
-                _conexion.Open();
-                _repositorio.Guardar(copago);
-                _conexion.Close();
+                var copagoBuscado = _context.Copagos.Find(copago.IdentificacionPaciente);
+
+                if(copagoBuscado!=null){
+
+                    return new GuardarCopagoResponse("ya se encuentra registrado el paciente");
+                }
+
+                _context.Copagos.Add(copago);
+                _context.SaveChanges();
+
                 return new GuardarCopagoResponse(copago);
             }
             catch (Exception e)
             {
                 return new GuardarCopagoResponse($"Error de la Aplicacion: {e.Message}");
             }
-            finally { _conexion.Close(); }
         }
 
         public class GuardarCopagoResponse 
@@ -55,9 +59,7 @@ namespace Logica
         
          public List<Copago> ConsultarTodos()
         {
-            _conexion.Open();
-            List<Copago> copagos = _repositorio.ConsultarTodos();
-            _conexion.Close();
+            List<Copago> copagos = _context.Copagos.ToList();
             return copagos;
         }
     }

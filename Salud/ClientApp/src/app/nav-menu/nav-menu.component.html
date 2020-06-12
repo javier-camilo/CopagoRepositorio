@@ -27,13 +27,35 @@
 
     </mat-toolbar>
 
+
     <mat-sidenav-container class="example-sidenav-container"
                            [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
       <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
                    [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
         <mat-nav-list>
-          <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of fillerNav"> <mat-icon>{{nav.icon}}</mat-icon> {{nav.name}} </a>
+
+          <div class="accordion" id="accordionExample">
+
+            
+
+            <mat-list-item type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Asignatura
+            </mat-list-item>
+
+                  
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+              
+                <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of fillerNav"> <mat-icon>{{nav.icon}}</mat-icon> {{nav.name}} </a>
+
+             </div>
+
+          </div>
+
+          
         </mat-nav-list>
+
+
+        
 
   
 

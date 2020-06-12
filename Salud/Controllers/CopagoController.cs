@@ -5,6 +5,7 @@ using Logica;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Salud.Models;
+using Datos;
 
 
 
@@ -16,13 +17,10 @@ namespace Salud.Controllers
     public class CopagoController : ControllerBase
     {
         private readonly CopagoService _copagoService;
-        public IConfiguration Configuration { get; }
 
-        public CopagoController(IConfiguration configuration)
+        public CopagoController(CopagoContext context)
         {
-            Configuration = configuration;
-            string connectionString = Configuration["ConnectionStrings:DefaultConnection"];
-            _copagoService = new CopagoService(connectionString);
+            _copagoService= new CopagoService(context);
         }
 
         [HttpPost]
