@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
@@ -20,6 +21,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import { CopagoService } from './services/copago.service';
+import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { CopagoService } from './services/copago.service';
     CounterComponent,
     FetchDataComponent,
     CopagoConsultaComponent,
-    CopagoRegistroComponent
+    CopagoRegistroComponent,
+    AlertModalComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -42,6 +45,7 @@ import { CopagoService } from './services/copago.service';
     MatButtonModule,
     MatSidenavModule,
     MatListModule,
+    NgbModule,
     MatToolbarModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -52,6 +56,7 @@ import { CopagoService } from './services/copago.service';
     BrowserAnimationsModule
   ],
   providers: [CopagoService],
+  entryComponents:[AlertModalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,9 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Salud.Models;
 using Datos;
-
-
-
+using Microsoft.AspNetCore.Http;
 
 namespace Salud.Controllers
 {
@@ -31,8 +29,19 @@ namespace Salud.Controllers
             var response = _copagoService.Guardar(copago);
             if (response.Error) 
             {
-                return BadRequest(response.Mensaje);
+                
+                ModelState.AddModelError("Guardar Persona", response.Mensaje);
+
+                var problemDetails = new ValidationProblemDetails(ModelState)
+                {
+                    Status = StatusCodes.Status400BadRequest,
+                };
+
+                return BadRequest(problemDetails);
+
+
             }
+
             return Ok(response.Copago);
         }
 

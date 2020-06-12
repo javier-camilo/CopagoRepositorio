@@ -23,7 +23,7 @@ namespace Logica
 
                 if(copagoBuscado!=null){
 
-                    return new GuardarCopagoResponse("ya se encuentra registrado el paciente");
+                    return new GuardarCopagoResponse("Error la persona ya se encuentra registrada");
                 }
 
                 _context.Copagos.Add(copago);

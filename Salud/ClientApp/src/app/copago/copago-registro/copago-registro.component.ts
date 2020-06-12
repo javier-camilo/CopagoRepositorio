@@ -59,7 +59,7 @@ export class CopagoRegistroComponent implements OnInit {
     this.copago=this.formGroup.value;
     this.copagoService.post(this.copago).subscribe(p => {
       if (p != null) {
-        alert('registro correcto!');
+        this.copago=p;
       }
     });
 
