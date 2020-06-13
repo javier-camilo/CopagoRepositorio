@@ -7,6 +7,9 @@ using Microsoft.Extensions.Configuration;
 using Salud.Models;
 using Datos;
 using Microsoft.AspNetCore.Http;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.SignalR;
+using Salud.Hubs;
 
 namespace Salud.Controllers
 {
@@ -15,14 +18,16 @@ namespace Salud.Controllers
     public class CopagoController : ControllerBase
     {
         private readonly CopagoService _copagoService;
+        private readonly IHubContext<SignalHub> _hubContext;
 
-        public CopagoController(CopagoContext context)
+        public CopagoController(CopagoContext context,IHubContext<SignalHub> hubContext)
         {
             _copagoService= new CopagoService(context);
+            _hubContext=hubContext;
         }
 
         [HttpPost]
-        public ActionResult<CopagoViewModel> Post(CopagoInputModel copagoInput)
+        public async Task<ActionResult<CopagoViewModel>> Post(CopagoInputModel copagoInput)
         {
             
             Copago copago = Mapear(copagoInput);
@@ -42,7 +47,9 @@ namespace Salud.Controllers
 
             }
 
-            return Ok(response.Copago);
+            var copagoViewModel = new CopagoViewModel(response.Copago);
+            await _hubContext.Clients.All.SendAsync("CopagoRegistrado", copagoViewModel);
+            return Ok(copagoViewModel);
         }
 
          private Copago Mapear(CopagoInputModel copagoInput)

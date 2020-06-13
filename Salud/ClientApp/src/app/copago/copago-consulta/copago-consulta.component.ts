@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Copago } from '../models/copago';
 import { CopagoService } from 'src/app/services/copago.service';
+import { SignalRService } from 'src/app/services/signal-r.service';
 
 @Component({
   selector: 'app-copago-consulta',
@@ -9,13 +10,19 @@ import { CopagoService } from 'src/app/services/copago.service';
 })
 export class CopagoConsultaComponent implements OnInit {
 
-  copagos:Copago[];
+  copagos:Copago[] = [];
   searchText:string;
 
-  constructor(private copagoService: CopagoService) { }
+  constructor(private copagoService: CopagoService,private signalRService: SignalRService) { }
 
   ngOnInit() {
+
     this.get();
+    
+    this.signalRService.signalReceived.subscribe((copago: Copago) => {
+      this.copagos.push(copago);
+    });
+
   }
 
   get(){
